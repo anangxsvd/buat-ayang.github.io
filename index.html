@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <title>Album Foto</title>
+    <style>
+        body {
+            background: linear-gradient(to bottom, rgb(175, 250, 194), rgb(72, 205, 250));
+            position: relative; /* Tambahkan ini untuk mengatur posisi absolut */
+        }
+        .navbar {
+            background-color: #87e7f8;
+        }
+        .footer {
+            background-color: #85c4ff;
+        }
+        .footer p {
+            margin-bottom: 0;
+        }
+
+        .love-effect {
+            position: absolute;
+            display: none;
+            background: red;
+            border-radius: 50%;
+            animation: loveAnimation 1s ease-out;
+            
+        }
+        .love-effect {
+        position: absolute;
+        display: none;
+        background: red;
+        border-radius: 50%;
+        font-size: 20em; /* Tambahkan ini untuk mengubah ukuran emoji */
+        animation: loveAnimation 1s ease-out;
+    }
+        @keyframes loveAnimation {
+            0% {
+                transform: scale(0);
+                opacity: 1;
+            }
+            100% {
+                transform: scale(1);
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <a class="navbar-brand" href="#">My PRINCESS</a>
+        <button class="btn btn-danger" id="loveButton">Pencet</button>
+    </nav>
+    <div class="container my-5">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="1.jpg" class="card-img-top" alt="Foto 1">
+                    <div class="card-body text-center">
+                        <button class="btn btn-primary" onclick="showMessage('masyaallah cantikkan')">Lihat Foto</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="2.jpg" class="card-img-top" alt="2">
+                    <div class="card-body text-center">
+                        <button class="btn btn-primary" onclick="showMessage('ini pas habis dari kota tua guys')">Lihat Foto</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="4.jpg" class="card-img-top" alt="Foto 3">
+                    <div class="card-body text-center">
+                        <button class="btn btn-primary" onclick="showMessage('masyaallah')">Lihat Foto</button>
+                    </div>
+                </div>
+            </div>
+            <!-- Tambahkan lebih banyak foto sesuai kebutuhan -->
+        </div>
+    </div>
+    <footer class="footer text-white text-center py-2">
+        <p>&copy; Anang.exe</p>
+    </footer>
+
+    <div class="love-effect" id="loveEffect">❤</div>
+
+    <script>
+        function showMessage(message) {
+            alert(message);
+        }
+
+        const loveButton = document.getElementById("loveButton");
+        const loveEffect = document.getElementById("loveEffect");
+
+        loveButton.addEventListener("click", () => {
+            loveEffect.style.display = "block";
+            loveEffect.style.left = `${event.clientX - 10}px`;
+            loveEffect.style.top = `${event.clientY - 10}px`;
+            setTimeout(() => {
+                loveEffect.style.display = "none";
+            }, 6000);
+        });
+    </script>
+</body>
+</html>
